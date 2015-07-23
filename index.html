@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="ISO-8859-1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>Wavyleaf Map Signups</title>
+		<link rel="stylesheet" type="text/css" href="inc/css/bootstrap.min.css">
+		<script language="javascript" type="text/javascript" src="inc/js/jquery-2.1.4.min.js"></script>
+		<script language="javascript" type="text/javascript" src="inc/js/bootstrap.min.js"></script>
+		<script language="javascript" type="text/javascript" src="inc/js/imageMapResizer.min.js"></script>
+		<script language="javascript" type="text/javascript" src="inc/js/jquery.maphilight.min.js"></script>
+		<script language="javascript" type="text/javascript">
+			$(window).load(function()
+			{
+				$('map').imageMapResize();
+				$('.map').maphilight();
+			});
+	    </script>
+	</head>
+	<body>
+		<div class="container">
+			<br>
+			<a name="top"></a>
+			
+			<main>
+				<!-- Zone Select -->
+				<div class="panel panel-primary">
+					<div class="panel-heading"><a name="zoneselect"></a><h2 class="panel-title">Select a Zone</h2></div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-sm-4">
+								<a href="#north">
+									<div class="text-center">Woodstock (North)</div>
+									<img class="img-responsive img-rounded" src="inc/images/maps/north.png" alt="Woodstock North" title="Woodstock North" />
+								</a>
+							</div>
+							<div class="col-sm-4">
+								<a href="#central">
+									<div class="text-center">Hollofield - Daniels (Central)</div>
+									<img class="img-responsive img-rounded" src="inc/images/maps/central.png" alt="Hollo Daniels" title="Hollo Daniels" />
+								</a>
+							</div>
+							<div class="col-sm-4">
+								<a href="#south">
+									<div class="text-center">Patapsco (South)</div>
+									<img class="img-responsive img-rounded" src="inc/images/maps/south.png" alt="Patapsco South" title="Patapsco South" />
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Project Information -->
+				<div class="jumbotron">
+					<img class="img-responsive" src="inc/images/wavyleaf.png" alt="Wavyleaf Logo" title="Wavyleaf Logo" />
+					<h1>The Wavyleaf Mapping Project at Towson University</h1>
+					<p>
+						Wavyleaf basketgrass (Oplismenus hirtellus spp. undulatifolius) is an invasive grass that was first found in Maryland in 1997. This grass grows in dense monocultures in forest understories and spreads quickly through clonal growth and by dispersal of glue covered seeds that stick to fur, clothing and skin.
+						<br><br>
+						We are asking for the public's help in mapping the distribution and spread of this invasive species. You can get involved by downloading our smartphone app and reporting locations of this distinctive and potentially destructive species.
+					</p>
+				</div>
+				
+				<!-- Woodstock/North Area select and area maps -->
+				<div class="panel panel-default">
+					<div class="panel-heading"><a name="north"></a><h2 class="panel-title">Select an Area - Woodstock(North)</h2></div>
+					<div class="panel-body">
+						<img class="img-responsive img-rounded attachment-original map" src="inc/images/maps/north.png" alt="Woodstock North" title="Woodstock North" usemap="#northmap" />
+						
+						<map name="northmap" id="northmap">
+							<area alt="Area 16" title="Area 16" href="map.html#area16" data-maphilight='{"stroke":false,"fillColor":"003614","fillOpacity":0.4}' shape="poly" coords="1363,1512,1367,1354,1345,1239,1310,1184,1252,1130,1238,1064,1242,1001,1334,777,1381,713,1536,682,1544,692,1539,718,1579,747,1598,708,1620,715,1647,762,1651,792,1693,854,1722,935,1769,983,1771,1044,1726,1067,1783,1167,1867,1177,1852,1222,1787,1276,1780,1302,1629,1508,1583,1485,1466,1488" />
+							<area alt="Area 17" title="Area 17" href="map.html#area17" data-maphilight='{"stroke":false,"fillColor":"003614","fillOpacity":0.4}' shape="poly" coords="1870,1174,1790,1171,1725,1074,1767,1048,1777,994,1728,942,1696,857,1652,788,1654,777,1665,764,1683,786,1693,746,1688,624,1695,606,1788,621,1806,598,1697,529,1653,476,1678,448,1726,422,2113,746,2119,938,2109,957,2034,1025,2010,1036,1962,1073,1931,1137,1885,1150" />
+							<area alt="Area 18" title="Area 18" href="map.html#area18" data-maphilight='{"stroke":false,"fillColor":"003614","fillOpacity":0.4}' shape="poly" coords="1377,713,1420,627,1588,427,1659,424,1698,395,1725,425,1719,440,1666,454,1660,483,1697,535,1774,572,1803,599,1787,619,1693,606,1683,625,1692,674,1688,745,1683,784,1665,758,1651,773,1610,710,1593,708,1584,748,1540,716,1540,687,1532,684" />
+							<area alt="Area 19" title="Area 19" href="map.html#area19" data-maphilight='{"stroke":false,"fillColor":"003614","fillOpacity":0.4}' shape="poly" coords="887,675,981,306,1135,312,1302,334,1505,192,1619,159,1630,275,1693,390,1660,420,1586,427,1513,506,1412,635,1375,716,1346,712,1318,673,1297,663,1215,682,1188,709,1189,782,1164,794,1120,742,1078,724,1039,740,986,725,925,707" />
+							<area alt="Area 20" title="Area 20" href="map.html#area20" data-maphilight='{"stroke":false,"fillColor":"003614","fillOpacity":0.4}' shape="poly" coords="773,1119,885,679,907,684,925,705,982,724,1035,739,1076,725,1118,739,1164,791,1193,779,1187,705,1292,666,1353,715,1375,718,1326,782,1238,1005,1240,1064,1256,1133,1313,1188,1347,1241,1368,1357,1365,1517,1281,1505,1107,1415,896,1193" />
+							<area alt="Area 21" title="Area 21" href="map.html#area21" data-maphilight='{"stroke":false,"fillColor":"003614","fillOpacity":0.4}' shape="poly" coords="888,679,774,1123,304,855,178,714,142,617,140,506,164,485,208,501,246,573,294,605,368,577,451,582,453,541,511,521,538,525,613,587,666,557,736,580,849,676" />
+							<area alt="Area 22" title="Area 22" href="map.html#area22" data-maphilight='{"stroke":false,"fillColor":"003614","fillOpacity":0.4}' shape="poly" coords="979,309,507,295,213,321,162,350,166,484,207,499,266,593,300,603,452,579,453,534,527,518,566,564,621,588,670,555,750,587,830,669,888,677" />
+						</map>
+						
+						<a href="#zoneselect">Zone Select</a>
+					</div>
+				</div>
+				
+				<!-- Hollo Daniels/Central Area select and area maps -->
+				<div class="panel panel-default">
+					<div class="panel-heading"><a name="central"></a><h2 class="panel-title">Select an Area - Hollofield - Daniels (Central)</h2></div>
+					<div class="panel-body">
+						<img class="img-responsive img-rounded attachment-original map" src="inc/images/maps/central.png" alt="Hollo Daniels" title="Hollo Daniels" usemap="#centralmap" />
+						
+						<map name="centralmap" id="centralmap">
+							<area alt="Area 8" title="Area 8" href="map.html#area8" data-maphilight='{"stroke":false,"fillColor":"003614","fillOpacity":0.4}' shape="poly" coords="1839,1101,1810,1110,1780,1126,1731,1160,1720,1185,1727,1309,1724,1377,1661,1501,1659,1541,1462,1541,1462,1509,1487,1408,1499,1219,1707,1066,1757,1059,1797,1073" />
+							<area alt="Area 9" title="Area 9" href="map.html#area9" data-maphilight='{"stroke":false,"fillColor":"003614","fillOpacity":0.4}' shape="poly" coords="1999,1245,1840,1101,1799,1112,1729,1163,1723,1192,1724,1376,1674,1485,1663,1502,1659,1542,1809,1543,1852,1515,2010,1301" />
+							<area alt="Area 10" title="Area 10" href="map.html#area10" data-maphilight='{"stroke":false,"fillColor":"003614","fillOpacity":0.4}' shape="poly" coords="1840,1103,1788,1067,1739,1057,1698,1070,1496,1219,1357,1045,1368,879,1417,816,1531,764,1551,796,1575,755,1588,756,1578,780,1578,817,1564,834,1547,835,1524,859,1525,878,1550,911,1573,912,1616,906,1634,914,1667,951,1686,984,1740,1002,1784,1040,1828,1055,1843,1079" />
+							<area alt="Area 11" title="Area 11" href="map.html#area11" data-maphilight='{"stroke":false,"fillColor":"003614","fillOpacity":0.4}' shape="poly" coords="1586,757,1579,787,1581,813,1564,835,1537,842,1523,868,1544,911,1562,911,1623,904,1655,932,1686,981,1745,1004,1779,1036,1831,1056,1840,1079,1836,1100,1999,1246,1943,851,1848,727,1733,616,1649,605,1605,606,1587,630,1594,647,1587,672,1605,732,1594,755" />
+							<area alt="Area 12" title="Area 12" href="map.html#area12" data-maphilight='{"stroke":false,"fillColor":"003614","fillOpacity":0.4}' shape="poly" coords="806,835,736,681,733,631,772,635,835,628,847,634,840,709,858,725,884,722,912,690,933,616,984,557,1021,547,1057,558,1068,573,1119,664,1143,685,1176,680,1185,634,1213,594,1237,586,1264,628,1302,643,1354,616,1392,613,1472,642,1482,645,1517,648,1558,662,1563,674,1579,681,1597,729,1595,752,1573,757,1549,795,1531,768,1417,816,1366,881,1016,880" />
+							<area alt="Area 13" title="Area 13" href="map.html#area13" data-maphilight='{"stroke":false,"fillColor":"003614","fillOpacity":0.4}' shape="poly" coords="741,297,858,340,1034,378,1319,434,1428,486,1499,541,1531,598,1574,640,1586,633,1591,648,1586,674,1606,730,1600,752,1594,744,1577,685,1561,664,1513,646,1481,647,1386,610,1300,641,1272,633,1239,587,1195,613,1179,641,1171,684,1150,690,1100,623,1062,559,1017,553,990,557,967,581,933,616,910,687,883,720,863,724,841,712,850,641,836,631,735,629,730,501" />
+							<area alt="Area 14" title="Area 14" href="map.html#area14" data-maphilight='{"stroke":false,"fillColor":"003614","fillOpacity":0.4}' shape="poly" coords="234,278,221,320,161,373,141,416,139,715,224,787,614,798,805,837,735,682,732,630,691,577,638,583,602,630,565,628,541,605,512,585,498,533,492,462,345,292,295,267" />
+							<area alt="Area 15" title="Area 15" href="map.html#area15" data-maphilight='{"stroke":false,"fillColor":"003614","fillOpacity":0.4}' shape="poly" coords="369,142,336,168,302,235,254,249,236,279,293,266,346,291,398,348,440,395,490,457,495,472,499,530,505,543,515,587,539,604,566,630,604,630,624,606,639,579,689,576,733,629,727,494,738,296,694,278,593,140" />
+						</map>
+						
+						<a href="#zoneselect">Zone Select</a>
+					</div>
+				</div>
+				
+				<!-- Patapsco/South Area select and area maps -->
+				<div class="panel panel-default">
+					<div class="panel-heading"><a name="south"></a><h2 class="panel-title">Select an Area - Patapsco(South)</h2></div>
+					<div class="panel-body">
+						<img class="img-responsive img-rounded attachment-original map" src="inc/images/maps/south.png" alt="Patapsco South" title="Patapsco South" usemap="#southmap" />
+						
+						<map name="southmap" id="southmap">
+							<area alt="Area 1" title="Area 1" href="map.html#area1" data-maphilight='{"stroke":false,"fillColor":"003614","fillOpacity":0.4}' shape="poly" coords="2066,849,1926,893,1740,874,1668,713,1710,699,1832,717,1963,764,2049,738" />
+							<area alt="Area 2" title="Area 2" href="map.html#area2" data-maphilight='{"stroke":false,"fillColor":"003614","fillOpacity":0.4}' shape="poly" coords="1739,872,1670,714,1465,814,1358,855,1365,879,1433,955,1564,934" />
+							<area alt="Area 3" title="Area 3" href="map.html#area3" data-maphilight='{"stroke":false,"fillColor":"003614","fillOpacity":0.4}' shape="poly" coords="1431,953,1365,878,1358,854,1216,1050,1137,1141,1079,1288,1136,1329,1218,1341,1309,1160,1421,1089" />
+							<area alt="Area 4" title="Area 4" href="map.html#area4" data-maphilight='{"stroke":false,"fillColor":"003614","fillOpacity":0.4}' shape="poly" coords="1358,853,1344,872,1328,862,1325,848,1301,851,1261,846,1230,806,1186,795,1174,784,1162,765,1144,763,1110,764,1096,748,1070,745,1053,737,1025,721,1016,720,1000,688,994,675,966,651,992,596,993,540,981,479,999,411,1158,488,1236,568" />
+							<area alt="Area 5" title="Area 5" href="map.html#area5" data-maphilight='{"stroke":false,"fillColor":"003614","fillOpacity":0.4}' shape="poly" coords="1344,871,1326,862,1324,852,1299,848,1288,850,1260,846,1244,823,1233,805,1211,802,1181,795,1171,778,1159,767,1135,763,1116,765,1106,757,1096,746,1078,746,1056,741,1037,731,1020,721,1007,695,994,672,966,647,951,666,938,676,919,700,924,726,907,744,882,750,859,776,820,831,841,861,968,972,1148,1004" />
+							<area alt="Area 6" title="Area 6" href="map.html#area6" data-maphilight='{"stroke":false,"fillColor":"003614","fillOpacity":0.4}' shape="poly" coords="964,649,939,620,920,584,895,567,883,555,863,555,831,564,815,561,809,553,812,531,814,521,812,510,793,503,775,498,753,479,741,461,715,452,686,450,674,447,663,434,640,411,603,375,582,362,555,346,550,332,550,294,504,293,530,443,741,712,821,829,881,749,904,742,919,728,918,696,934,674,959,665" />
+							<area alt="Area 7" title="Area 7" href="map.html#area7" data-maphilight='{"stroke":false,"fillColor":"003614","fillOpacity":0.4}' shape="poly" coords="965,648,946,626,928,605,919,584,899,565,877,554,849,559,830,563,813,560,808,553,809,536,815,522,812,507,802,506,787,502,770,494,747,468,727,457,718,452,698,450,685,449,670,442,653,424,610,380,579,357,562,348,548,329,549,292,594,295,757,345,868,369,958,392,996,411,999,432,984,477,993,535,995,597" />
+						</map>
+						
+						<a href="#zoneselect">Zone Select</a>
+					</div>
+				</div>
+			</main>
+			<a href="#top">Top</a><br><br><br>
+		</div>
+	</body>
+</html>
