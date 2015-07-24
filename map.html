@@ -67,11 +67,37 @@
 						// set up form
 						$("#formTitle").html("Sign up for Area " + mapID);
 						$("#area").attr("value", mapID);
+						
+						// set up large map
+						$('#bigMapModal').on('shown.bs.modal', function ()
+						{
+							$('#bigMapModal').focus()
+						})
+						$("#bigMapLabel").html("Area " + mapID);
+						$("#bigMap").attr("src", "inc/images/maps/area" + mapName + ".png");
+						$("#bigMap").attr("alt", "Area " + mapID);
+						$("#bigMap").attr("title", "Area " + mapID);
+						$("#bmfullpng").attr("href", "inc/images/maps/area" + mapName + ".png");
+						$("#bmfullpdf").attr("href", "inc/pdf/area" + mapName + ".pdf");
 					}
 				});
 		    </script>
 	</head>
 	<body>
+<div class="modal fade bs-example-modal-lg" id="bigMapModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="bigMapLabel">Area</h4>
+			</div>
+			<div class="modal-body">
+				<img id="bigMap" class="img-responsive img-rounded" src="" alt="Area" title="Area" data-toggle="modal" />
+				<div class="text-center"><a id="bmfullpng" href="" target="_blank">PNG</a> | <a id="bmfullpdf" href="" target="_blank">PDF</a></div>
+			</div>
+		</div>
+	</div>
+</div>
 		<div class="container">
 			<br>
 			<div class="panel panel-primary">
@@ -80,8 +106,8 @@
 					<div class="row">
 						<div class="col-md-3"></div>
 						<div class="col-md-6">
-							<img id="map" class="img-responsive img-rounded" src="" alt="Area" title="Area" />
-							<div class="text-center"><a id="fullpng" href="">PNG</a> | <a id="fullpdf" href="">PDF</a> | <a id="back" href="index.html">Back</a></div>
+							<img id="map" style="cursor: pointer;" class="img-responsive img-rounded" src="" alt="Area" title="Area" data-toggle="modal" data-target="#bigMapModal" />
+							<div class="text-center"><a id="fullpng" href="" target="_blank">PNG</a> | <a id="fullpdf" href="" target="_blank">PDF</a> | <a id="back" href="index.html">Back</a></div>
 						</div>
 						<div class="col-md-3"></div>
 					</div>
