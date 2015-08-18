@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+			<meta charset="ISO-8859-1">
+			<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+			<title>Wavyleaf Map Signup</title>
+			<link rel="stylesheet" type="text/css" href="inc/css/bootstrap.min.css">
+			<script language="javascript" type="text/javascript" src="inc/js/jquery-2.1.4.min.js"></script>
+			<script language="javascript" type="text/javascript" src="inc/js/bootstrap.min.js"></script>
+			<script language="javascript" type="text/javascript">
+				$(window).load(function()
+				{
+					var map = document.location.hash.substring(1);
+					
+					// set up given map
+					if (map.startsWith("area"))
+					{
+						var mapID = parseInt(map.substring(4));
+						var mapName = mapID;
+						
+						// get map (file) name for combined areas
+						switch (mapID)
+						{
+							case 8:
+							case 9:
+								mapName = "8-9";
+								break;
+							case 10:
+							case 11:
+								mapName = "10-11";
+								break;
+							case 12:
+							case 13:
+								mapName = "12-13";
+								break;
+							case 14:
+							case 15:
+								mapName = "14-15";
+								break;
+							case 16:
+							case 17:
+								mapName = "16-17";
+								break;
+						}
+						
+						document.title += " - Area " + mapID;
+						$("#title").html("Area " + mapID);
+						$("#map").attr("src", "inc/images/maps/area" + mapName + ".png");
+						$("#map").attr("alt", "Area " + mapID);
+						$("#map").attr("title", "Area " + mapID);
+						$("#fullpng").attr("href", "inc/images/maps/area" + mapName + ".png");
+						$("#fullpdf").attr("href", "inc/pdf/area" + mapName + ".pdf");
+						
+						// set back link based on area number
+						var zone = "south";
+						if (mapID > 7 && mapID < 16)
+						{
+							zone = "central";
+						}
+						else if (mapID >= 16)
+						{
+							zone = "north";
+						}
+						
+						$("#back").attr("href", "map.html#area" + mapID);
+						
+						// set up form
+						$("#formTitle").html("Sign up for Area " + mapID);
+						$("#area").attr("value", mapID);
+						
+						// set up large map
+						$('#bigMapModal').on('shown.bs.modal', function ()
+						{
+							$('#bigMapModal').focus()
+						})
+						$("#bigMapLabel").html("Area " + mapID);
+						$("#bigMap").attr("src", "inc/images/maps/area" + mapName + ".png");
+						$("#bigMap").attr("alt", "Area " + mapID);
+						$("#bigMap").attr("title", "Area " + mapID);
+						$("#bmfullpng").attr("href", "inc/images/maps/area" + mapName + ".png");
+						$("#bmfullpdf").attr("href", "inc/pdf/area" + mapName + ".pdf");
+					}
+				});
+		    </script>
+	</head>
+	<body>
+<div class="modal fade bs-example-modal-lg" id="bigMapModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="bigMapLabel">Area</h4>
+			</div>
+			<div class="modal-body">
+				<img id="bigMap" class="img-responsive img-rounded" src="" alt="Area" title="Area" data-toggle="modal" />
+				<div class="text-center"><a id="bmfullpng" href="" target="_blank">PNG</a> | <a id="bmfullpdf" href="" target="_blank">PDF</a></div>
+			</div>
+		</div>
+	</div>
+</div>
+		<div class="container">
+			<br>
+			<div class="panel panel-primary">
+				<div class="panel-heading"><h3 id="formTitle" class="panel-title">Sign up</h3></div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-md-3"></div>
+						<div class="col-md-6">
+							<img id="map" style="cursor: pointer;" class="img-responsive img-rounded" src="" alt="Area" title="Area" data-toggle="modal" data-target="#bigMapModal" />
+							<div class="text-center"><a id="fullpng" href="" target="_blank">PNG</a> | <a id="fullpdf" href="" target="_blank">PDF</a></div>
+						</div>
+						<div class="col-md-3"></div>
+					</div>
+					<form action="signup.php" method="post">
+						<div class="form-group">
+							<label for="name">Name</label>
+							<input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+						</div>
+						<div class="form-group">
+							<label for="email">Email address</label>
+							<input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+						</div>
+						<div class="form-group">
+							<label for="phone">Phone Number</label>
+							<input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone Number" required>
+						</div>
+						<div class="radio">
+							<label>
+								<input type="radio" name="contactPref" id="contactPref1" value="Email" checked>
+								Email
+							</label>
+						</div>
+						<div class="radio">
+							<label>
+								<input type="radio" name="contactPref" id="contactPref2" value="Phone">
+								Phone
+							</label>
+						</div>
+						<div class="form-group">
+							<label for="message">Message (Optional)</label>
+							<textarea class="form-control" id="message" name="message" rows="3"></textarea>
+						</div>
+						<input type="hidden" id="area" name="area" value="" required>
+						<div class="btn-group" role="group" aria-label="signup">
+							<button type="submit" name="submit" class="btn btn-primary">Submit</button>
+							<a id="back" href="map.html" class="btn btn-default">Back</a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
