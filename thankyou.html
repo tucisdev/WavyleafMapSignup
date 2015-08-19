@@ -48,6 +48,8 @@
 			$("#map").attr("src", "inc/images/maps/area" + mapName + ".png");
 			$("#map").attr("alt", "Area " + mapID);
 			$("#map").attr("title", "Area " + mapID);
+			$("#fullpng").attr("href", "inc/images/maps/area" + mapName + ".png");
+			$("#fullpdf").attr("href", "inc/pdf/area" + mapName + ".pdf");
 
 			// set back link based on area number
 			var zone = "south";
@@ -78,6 +80,7 @@
 			<div class="panel-body">
 				<img id="map" class="img-responsive img-rounded" src="" alt="Area"
 					title="Area" />
+				<div class="text-center"><a id="fullpng" href="" target="_blank">PNG</a> | <a id="fullpdf" href="" target="_blank">PDF</a></div>
 				<div class="text-center">
 					<div class="btn-group" role="group" aria-label="signup">
 						<a id="back" href="index.html" class="btn btn-default">Back</a>
