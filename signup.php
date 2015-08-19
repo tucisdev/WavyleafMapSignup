@@ -7,11 +7,11 @@ if ( isset ( $_POST ['submit'] ) )
     $conf = parse_ini_file ( "conf.ini", true ); // mail config
                                                  
     // form info
-    $name = $_POST ['name'];
-    $email = $_POST ['email'];
-    $phone = $_POST ['phone'];
+    $name = filter_var ( trim ( $_POST ['name'] ), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW | FILTER_FLAG_STRIP_HIGH );
+    $email = filter_var ( trim ( $_POST ['email'] ), FILTER_SANITIZE_EMAIL );
+    $phone = filter_var ( trim ( $_POST ['phone'] ), FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION | FILTER_FLAG_ALLOW_THOUSAND );
     $contactPref = $_POST ['contactPref'];
-    $message = $_POST ['message'];
+    $message = filter_var ( trim ( $_POST ['message'] ), FILTER_SANITIZE_STRING, FILTER_FLAG_ENCODE_LOW | FILTER_FLAG_ENCODE_HIGH | FILTER_FLAG_ENCODE_AMP );
     $area = $_POST ['area'];
     $mapName = $_POST ['mapName'];
     
