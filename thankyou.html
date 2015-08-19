@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Thank you! - Wavyleaf Map Signup</title>
+<link rel="stylesheet" type="text/css" href="inc/css/bootstrap.min.css">
+<script language="javascript" type="text/javascript"
+	src="inc/js/jquery-2.1.4.min.js"></script>
+<script language="javascript" type="text/javascript"
+	src="inc/js/bootstrap.min.js"></script>
+<script language="javascript" type="text/javascript">
+	$(window).load(function() {
+		var map = document.location.hash.substring(1);
+
+		// set up given map
+		if (map.startsWith("area")) {
+			var mapID = parseInt(map.substring(4));
+			var mapName = mapID;
+
+			// get map (file) name for combined areas
+			switch (mapID) {
+			case 8:
+			case 9:
+				mapName = "8-9";
+				break;
+			case 10:
+			case 11:
+				mapName = "10-11";
+				break;
+			case 12:
+			case 13:
+				mapName = "12-13";
+				break;
+			case 14:
+			case 15:
+				mapName = "14-15";
+				break;
+			case 16:
+			case 17:
+				mapName = "16-17";
+				break;
+			}
+
+			document.title += " - Area " + mapID;
+			$("#title").html("Area " + mapID + " Map");
+			$("#map").attr("src", "inc/images/maps/area" + mapName + ".png");
+			$("#map").attr("alt", "Area " + mapID);
+			$("#map").attr("title", "Area " + mapID);
+
+			// set back link based on area number
+			var zone = "south";
+			if (mapID > 7 && mapID < 16) {
+				zone = "central";
+			} else if (mapID >= 16) {
+				zone = "north";
+			}
+
+			$("#back").attr("href", "index.html#" + zone);
+		}
+	});
+</script>
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron">
+			<img class="img-responsive" src="inc/images/wavyleaf.png"
+				alt="Wavyleaf Logo" title="Wavyleaf Logo" />
+			<h2>Thank you!</h2>
+			<p>Thank you for participating in the Project Wavyleaf &#64; Patapsco!</p>
+		</div>
+		<br>
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h3 id="title" class="panel-title">Area Map</h3>
+			</div>
+			<div class="panel-body">
+				<img id="map" class="img-responsive img-rounded" src="" alt="Area"
+					title="Area" />
+				<div class="text-center">
+					<div class="btn-group" role="group" aria-label="signup">
+						<a id="back" href="index.html" class="btn btn-default">Back</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

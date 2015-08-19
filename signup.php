@@ -50,14 +50,30 @@ if ( isset ( $_POST ['submit'] ) )
     $confirmation->Body = "Thank you for signing up for Wavyleaf Area " . $area . "!<br><br>Area Map<br><img style=\"width:200px;height:200px;\" src=\"" . $conf ['websiteHome'] . "inc/images/maps/area" . $mapName . ".png\" alt=\"Wavyleaf Area " . $area . "\"><br><a href=\"" . $conf ['websiteHome'] . "inc/images/maps/area" . $mapName . ".png\">PNG</a> | <a href=\"" . $conf ['websiteHome'] . "inc/pdf/area" . $mapName . ".pdf\">PDF</a>";
     $confirmation->AltBody = "Thank you for signing up for Wavyleaf Area " . $area . "!\n\nYou can find maps of the area below:\n" . "PNG: " . $conf ['websiteHome'] . "inc/images/maps/area" . $mapName . ".png\nPDF: " . $conf ['websiteHome'] . "inc/pdf/area" . $mapName . ".pdf";
     
-    if ( ! ($signup->send () && $confirmation->send ()) )
+    // error sending mail
+    if ( ! $signup->send () )
     {
-        echo 'Message could not be sent.';
-        echo 'Mailer Error: ' . $signup->ErrorInfo;
+        session_start ();
+        
+        $_SESSION ['error_title'] = 'Signup Message could not be sent.';
+        $_SESSION ['error'] = $signup->ErrorInfo;
+        
+        header ( 'Location: error.php' );
     }
+    elseif ( ! $confirmation->send () )
+    {
+        session_start ();
+        
+        $_SESSION ['error_title'] = 'Confirmation Message could not be sent.';
+        $_SESSION ['error'] = $confirmation->ErrorInfo;
+        
+        header ( 'Location: error.php' );
+    }
+    
+    // success!
     else
     {
-        echo "Mail Sent. Thank you for participating!";
+        header ( 'Location: thankyou.html#area' . $area );
     }
 }
 ?>
