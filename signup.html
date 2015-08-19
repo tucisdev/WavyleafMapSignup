@@ -67,6 +67,7 @@
 						// set up form
 						$("#formTitle").html("Sign up for Area " + mapID);
 						$("#area").attr("value", mapID);
+						$("#mapName").attr("value", mapName);
 						
 						// set up large map
 						$('#bigMapModal').on('shown.bs.modal', function ()
@@ -141,6 +142,7 @@
 							<textarea class="form-control" id="message" name="message" rows="3"></textarea>
 						</div>
 						<input type="hidden" id="area" name="area" value="" required>
+						<input type="hidden" id="mapName" name="mapName" value="" required>
 						<div class="btn-group" role="group" aria-label="signup">
 							<button type="submit" name="submit" class="btn btn-primary">Submit</button>
 							<a id="back" href="map.html" class="btn btn-default">Back</a>
