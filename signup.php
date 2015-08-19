@@ -30,7 +30,6 @@ if ( isset ( $_POST ['submit'] ) )
     $signup->From = $conf ['MAIL'] ['username'];
     $signup->FromName = $conf ['MAIL'] ['name'];
     
-    // TODO Does this work?
     $confirmation = clone $signup; // copy SMTP settings to mail to send to user who signed up
     
     $signup->addAddress ( $conf ['MAIL'] ['toEmail'], $conf ['MAIL'] ['name'] ); // send wavyleaf email
